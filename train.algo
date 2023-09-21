@@ -1,0 +1,24 @@
+FUNCTION z(x, y)
+VAR
+    res: INTEGER;  // Variable pour stocker le résultat
+    i, j: INTEGER; // Variables de boucle
+
+BEGIN
+    res := 0; // Initialiser le résultat à zéro
+
+    // Parcourir le tableau x
+    FOR i FROM 0 TO LENGTH(x) - 1 DO
+        IF NOT y CONTAINS x[i] THEN
+            res := res + x[i];
+        END_IF
+    END_FOR
+
+    // Parcourir le tableau y
+    FOR j FROM 0 TO LENGTH(y) - 1 DO
+        IF NOT x CONTAINS y[j] THEN
+            res := res + y[j];
+        END_IF
+    END_FOR
+
+    RETURN res; // Retourner le résultat
+END
